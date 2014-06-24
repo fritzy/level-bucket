@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/fritzy/level-bucket",
   "dependencies": {
-    "level-atomichooks": "0.0.2"
+   "level-atomichooks": "0.0.3"
   }
 }
