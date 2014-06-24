@@ -29,6 +29,8 @@ function LevelBucket(db, opts) {
     return db;
 }
 
+module.exports = LevelBucket;
+
 /*
 var util = require('util');
 var concat = require('concat-stream');
