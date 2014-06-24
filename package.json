@@ -1,6 +1,6 @@
 {
   "name": "level-bucket",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Riak-like bucket features for leveldb.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/fritzy/level-bucket",
   "dependencies": {
-   "level-atomichooks": "0.0.3"
+    "level-atomichooks": "0.0.3"
   }
 }
