@@ -1,6 +1,6 @@
 {
   "name": "level-bucket",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Riak-like bucket features for leveldb.",
   "main": "index.js",
   "scripts": {
