@@ -10,30 +10,16 @@ function LevelBucket(db, opts) {
 
     db.registerKeyPreProcessor(function (key, opts) {
         opts = opts || {};
-        var bucket;
-        if (Array.isArray(opts.bucket)) {
-            bucket = opts.bucket.slice();
-        } else {
-            bucket = [opts.bucket || db._configBucket.default];
-        }
-        bucket.push(key);
-        var newkey = bucket.join(db._configBucket.sep)
+        opts.bucket = opts.bucket || db._configBucket.default;
+        var newkey = [opts.bucket, key].join(db._configBucket.sep)
         //console.log(key, "->", newkey);
         return newkey;
     });
     
     db.registerKeyPostProcessor(function (key, opts) {
         opts = opts || {};
-        var length = 0;
-        var newkey;
-        if (Array.isArray(opts.bucket)) {
-            opts.bucket.forEach(function (subbuck) {
-                length += subbuck.length;
-            });
-        } else {
-            length += (opts.bucket || db._configBucket.default).length;
-        }
-        newkey = key.slice(length + opts.bucket.length);
+        opts.bucket = opts.bucket || db._configBucket.default;
+        var newkey = key.slice(opts.bucket + 1);
         //console.log(key, "<-", newkey);
         return newkey;
     });
