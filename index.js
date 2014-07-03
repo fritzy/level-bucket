@@ -19,7 +19,7 @@ function LevelBucket(db, opts) {
     db.registerKeyPostProcessor(function (key, opts) {
         opts = opts || {};
         opts.bucket = opts.bucket || db._configBucket.default;
-        var newkey = key.slice(opts.bucket + 1);
+        var newkey = key.slice(opts.bucket.length + 1);
         //console.log(key, "<-", newkey);
         return newkey;
     });
